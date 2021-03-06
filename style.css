@@ -1,5 +1,7 @@
 html * {
     font-family: 'Roboto Slab';
+    overflow: none;
+    margin: 0;
 }
 
 body {
@@ -10,9 +12,9 @@ body {
 
 * {
     box-sizing: border-box;
-
     padding: 0;
     background-color: transparent;
+    margin: 0;
 }
 
 li, div, p{
@@ -65,37 +67,30 @@ header {
     color: burlywood;
 }
 
-.sub-navbar {
-    margin-top: 25px;
-    width: auto;
-    float: left;
-    display: inline-block;
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
 /*------------------------------------------------------------------------------------------------------*/
 
 .main-1 {
     z-index: 2;
     top: 0;
-    height: 100%;
+    height: 1000px;
     width: 100%;
     flex-basis: 800px;
     background-image: url("20210116115945_1.jpg");
     background-color: black;
+    background-repeat: no-repeat;
 }
 
 .main-2 {
     font-family: 'Roboto Slab';
     width: auto;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 35px;
+    color: whitesmoke;
     height: 20%;
     text-align: center;
     position: relative;
     top: 10%;
     background: transparent;
+    margin-bottom: 5%;
 }
 
 .main-3 {
@@ -104,8 +99,7 @@ header {
     font-size: 30px;
     font-style: italic;
     width: auto;
-    margin-left: auto;
-    margin-right: auto;
+    color: whitesmoke;
     height: 20%;
     text-align: center;
     position: relative;
@@ -119,15 +113,17 @@ header {
     text-align: center;
     position: relative;
     width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-bottom: 15%;
+
     top: 15%;
     font-family: 'Roboto Slab';
     background-color: rgba(0,0,0,0.8);
-    display: flex;
-    align-items: stretch;
     transition: 0.4s;
+}
+
+.container-about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-about:hover {
@@ -141,16 +137,6 @@ header {
     padding: 16px;
     border: none;
     height: 100%;
-}
-
-.dropdown {
-    margin-top: 12.5px;
-    margin-bottom: 12.5px;
-    height: 50px;
-    line-height: 50px;
-    float: right;
-    position: relative;
-    display: inline-block;
 }
 
 .dropdown-content {
@@ -171,33 +157,7 @@ header {
     display: block;
 }
 
-
 /*---------------------------------------------------------------------------*/
-
-.footer-main {
-    height: 100px;
-    background-color: tomato;
-    position: relative;
-    bottom: 0;
-}
-
-.footer-content-1 {
-    color: white;
-    position: relative;
-    top: 40%;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    background-color: transparent;
-}
-
-.dropdown-content a:hover {background-color: #ddd; color: black;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: darkmagenta;}
-
-
 
 @font-face {
     font-family: south-park;
@@ -218,10 +178,10 @@ header {
     color: tomato;
 }
 
-.container {
-    position: absolute;
+/*.container {
+    position: relative;
     display: flex;
-    height: 100%;
+    height: auto;
     width: 100%;
     overflow: auto;
     display: flex;
@@ -232,6 +192,14 @@ header {
     position: ab;
 }*/
 
+.container {
+    position: absolute;
+    margin: 0 auto;
+    overflow:hidden;
+    padding: 0 0px;
+    width: 100%;
+    top: 15%;
+}
 /*-----------------------------------------------------------------------------------------------------*/
 
 .main-vip-1 {
@@ -243,9 +211,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 5%;
     position: relative;
     top: 2.5%;
+    background-color: rgba(0,0,0,0.4);
 }
 
 .vip-h3 {
@@ -253,14 +221,23 @@ header {
     text-align: center; 
     height: auto; 
     width: auto;
-    margin-left: auto;
-    margin-right: auto; 
     display: flex; 
     align-items: center;
     justify-content: center;
     align-items: center;
     position: relative;
     top: 15%;
+    margin-top: 50px;
+}
+
+footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 75px;
+    top: 100%;
+    margin-bottom: -1px;
 }
 
 div a {
@@ -299,4 +276,10 @@ div a {
 
 .vip-h3:hover {
     color: whitesmoke;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-about {
+        width: 70%;
+    }
 }
