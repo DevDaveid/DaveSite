@@ -4,14 +4,21 @@ html * {
     margin: 0;
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 html {
-    height: 91.75%;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    min-height: 100%;
     width: 100%;
 }
 
 body {
     display: flex;
     margin: 0;
+    min-height: 100%;
     background-color: red;
 }
 
@@ -30,10 +37,6 @@ li, div, p{
     text-decoration: none;
 }
 
-header, .nav-bar, ul ,.nav__links li, .nav__links li a{
-    background-color: transparent;
-}
-
 header {
     z-index: 1;
     position: absolute;
@@ -42,37 +45,72 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 2%;
-    background: transparent;
+    padding: 0;
+    background: gray;
+    height: 60px;
+    width: 100%;
 }
 
-/*--------------------------------------------------------------------------------------------------------*/
+nav, ul, header {
+    width: 100%;
+}
 
-#nav-bar {
-    background: transparent;
+nav {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    background-color: black;
+    opacity: 0.8;
+    z-index: 2;
+    display: flex;
+    overflow: hidden;
+    list-style-type: none;
+    float: left;
     width: 100%;
     height: 75px;
-    order: 1;
+    position: absolute;
+    align-items: center;
 }
 
-.nav__links li {
-    display: inline-block;
-    padding: 0px 20px;
+li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    float: left;
+    width: auto;
+    padding: 0;
+    height: 100%;
 }
 
-.nav__links li:nth-child(1) {
-    padding: 0 20px 0 0;
+li a {
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    background-color: transparent;
+    align-items: center;
 }
 
-.nav__links li a {
-    transition: all 0.3s ease 0s;
+li a p {
+    display: block;
+    height: min-content;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.nav__links li a:hover {
-    color: burlywood;
+.nav-bar-items {
+    transition: 0.3s;
+    color: whitesmoke;
+    font-family: 'Roboto Slab';
 }
 
-/*------------------------------------------------------------------------------------------------------*/
+.list-home-page {
+    
+}
 
 .main-1 {
     z-index: 2;
@@ -85,6 +123,9 @@ header {
     background-repeat: no-repeat;
     overflow: initial;
     background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .main-2 {
@@ -100,6 +141,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    top: -10%;
 }
 
 .main-3 {
@@ -115,6 +157,7 @@ header {
     text-align: center;
     position: relative;
     background: transparent;
+    top: -10%;
 }
 
 .main-about {
@@ -122,22 +165,26 @@ header {
     padding: 20px;
     text-align: center;
     position: relative;
-    width: 40%;
-    top: 15%;
+    width: 40%; 
     font-family: 'Roboto Slab';
     background-color: rgba(0,0,0,0.7);
     transition: 0.4s;
 }
 
 .container-about {
+    overflow:none;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 0px;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    flex: 1 0 auto;
 }
 
 .main-about:hover {
-    background-color: rgba(63, 30, 124, 0.45);
+    background-color: rgba(0, 0, 0, 0.45);
     transform: scale(1.1);
 }
 
@@ -145,52 +192,9 @@ header {
     color: whitesmoke;
 }
 
-.dropbtn {
-    width: 160px;
-    color: white;
-    padding: 16px;
-    border: none;
-    height: 100%;
-}
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    text-align: center;
-    width: 160px;
-    height: 50px;
-    color: white;
-
-    text-decoration: none;
-    display: block;
-}
 
 /*---------------------------------------------------------------------------*/
-
-@font-face {
-    font-family: south-park;
-    src: url(south_park.ttf);
-}
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.sticky + #nav-bar {
-    padding-top: 100px;
-}
-
-.sub-navbar a:hover {
-    color: tomato;
-}
 
 /*.container {
     position: relative;
@@ -207,12 +211,12 @@ header {
 }*/
 
 .container {
-    position: absolute;
+    position: relative;
     margin: 0 auto;
     overflow:hidden;
     padding: 0 0px;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     /*top: 15%;*/
     display: flex;
     justify-content: center;
@@ -250,12 +254,14 @@ header {
 }
 
 footer {
+    flex-shrink: 0;
     position: relative;
+    bottom: 0;
     display: flex;
     justify-content: center;
     width: 100%;
     height: 75px;
-    top: 100%;
+    top: auto;
     margin-bottom: -1px;
 }
 
@@ -293,23 +299,13 @@ div a {
     transition: 0.3s;
 }
 
-.main-2:hover, .main-3:hover {
-    color: blueviolet;
-    transform: scale(1.1);
-}
-
-
-
 @media only screen and (max-width: 1049px) {
     .main-about {
         width: 70%;
     }
-    html {
-        height: 1000px;
-        width: 100%;
-    }
+
     .container {
-        height: 1000px;
+        min-height: 100vh;
         width: 100%;
     }
     .main-2 {
@@ -318,15 +314,23 @@ div a {
 }
 
 @media only screen and (max-width: 399px) {
-    html {
-        height: 1100px;
-        width: 100%;
-    }
-    .container {
-        height: 1100px;
-        width: 100%;
-    }
+    
     .main-2 {
         font-size: 55px;
     }
+
+    .nav-bar-items {
+        font-size: 20px;
+    }
+    
+}
+
+li a:hover{
+    background: purple;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+li a:hover .nav-bar-items {
+    color: white;
 }
