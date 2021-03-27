@@ -62,15 +62,15 @@ nav {
 
 ul {
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.9;
     z-index: 2;
     display: flex;
     overflow: hidden;
     list-style-type: none;
     float: left;
     width: 100%;
-    height: 75px;
-    position: absolute;
+    height: 90px;
+    position: fixed;
     align-items: center;
 }
 
@@ -103,14 +103,9 @@ li a p {
 }
 
 .nav-bar-items {
-    transition: 0.3s;
-    color: whitesmoke;
     font-family: 'Roboto Slab';
 }
 
-.list-home-page {
-    
-}
 
 .main-1 {
     z-index: 2;
@@ -131,7 +126,7 @@ li a p {
 .main-2 {
     font-family: 'Roboto Slab';
     width: max-content;
-    font-size: 75px;
+    font-size: 85px;
     color: whitesmoke;
     height: 10%;
     text-align: center;
@@ -141,13 +136,13 @@ li a p {
     display: flex;
     align-items: center;
     justify-content: center;
-    top: -10%;
+    
 }
 
 .main-3 {
     /*font-size: 75;*/
     font-family: 'Roboto Slab';
-    font-size: 30px;
+    font-size: 40px;
     font-style: italic;
     width: auto;
     color: whitesmoke;
@@ -157,7 +152,7 @@ li a p {
     text-align: center;
     position: relative;
     background: transparent;
-    top: -10%;
+    
 }
 
 .main-about {
@@ -183,32 +178,15 @@ li a p {
     flex: 1 0 auto;
 }
 
+#scrolling-to-1 {
+    background-color:rgba(0, 0, 0, 0.45);
+    transition: 0.3s;
+}
+
 .main-about:hover {
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(126, 122, 122, 0.45);
     transform: scale(1.1);
 }
-
-.main-about:hover .vip-h3 {
-    color: whitesmoke;
-}
-
-
-
-/*---------------------------------------------------------------------------*/
-
-/*.container {
-    position: relative;
-    display: flex;
-    height: auto;
-    width: 100%;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-/*.container > * {
-    position: ab;
-}*/
 
 .container {
     position: relative;
@@ -223,7 +201,6 @@ li a p {
     align-items: center;
     flex-direction: column;
 }
-/*-----------------------------------------------------------------------------------------------------*/
 
 .main-vip-1 {
     height: auto;
@@ -235,12 +212,12 @@ li a p {
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 2.5%;
-    background-color: rgba(0,0,0,0.4);
+    
+    background-color: rgba(0,0,0,0.7);
 }
 
 .vip-h3 {
-    color:blueviolet; 
+    color:rgb(255, 244, 146); 
     text-align: center; 
     height: auto; 
     width: auto;
@@ -309,28 +286,97 @@ div a {
         width: 100%;
     }
     .main-2 {
-        font-size: 55px;
+        font-size: 65px;
     }
-}
-
-@media only screen and (max-width: 399px) {
-    
-    .main-2 {
-        font-size: 55px;
-    }
-
     .nav-bar-items {
-        font-size: 20px;
+        width: 33.33%;
     }
-    
+
+    .main-3 {
+        font-size: 30px;
+        top: 5%;
+    }
+
+    .main-about {
+        font-size: 22px;
+    }
+
+    .vip-h3 {
+        font-size: 40px;
+    }
+
+    ul {
+        height: 70px;
+    }
 }
 
-li a:hover{
+li button:hover{
     background: purple;
     opacity: 1;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 li a:hover .nav-bar-items {
     color: white;
+}
+
+.nav-buttons {
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    background-color: transparent;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    outline:none;
+    justify-content: center;
+}
+
+.nav-buttons:active {
+    outline: none;
+}
+
+#nav-bar {
+    transition:top 0.3s;
+}
+
+#players-container {
+    background-color: rgba(46, 43, 43, 0.45);
+    transition: 0.3s;
+}
+
+#players-container div p {
+    font-family: 'Roboto Slab';
+    padding: 10px;
+}
+
+#players-container div p a {
+    font-style: none;
+    color: whitesmoke;
+    transition: 0.3s;
+}
+
+#players-container div p a:hover {
+    color: purple;
+}
+
+#servers-info:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#servers-info:hover + #players-container {
+    color: red;
+}
+
+#servers-info {
+    background-color: rgba(0,0,0,0.9);
+}
+
+#steam-group-members {
+    color: rgb(197, 253, 197);
 }
