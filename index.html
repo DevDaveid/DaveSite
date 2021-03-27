@@ -12,12 +12,11 @@
         <script src="https://kit.fontawesome.com/06e0fc2d23.js" crossorigin="anonymous"></script>
     </head>
 
-    <body class="main-1">
-            <ul class="nav-bar">
-                <li><a href="#"><p class="nav-bar-items">Home</p></a></li>
-                <li><a href="#"><p class="nav-bar-items">Records</p></a></li>
-                <li><a id="vip-id" href="#"><p class="nav-bar-items">VIP</p></a></li>
-                <li class="list-home-page"><a href="#"><p class="nav-bar-items">Players</p></a></li>
+    <body class="main-1" id="main-body" onload="scrollToTop()">
+            <ul id="nav-bar">
+                <li class="nav-bar-items"><button href="#" class="nav-buttons" onclick="scrollToTop()"><p class="nav-bar-items" id="home-actual-id">Home</p></button></li>
+                <li class="nav-bar-items"><button onclick="scrollTo1()" id="vip-id" href="#" class="nav-buttons"><p class="nav-bar-items" id="vip-actual-id">VIP</p></button></li>
+                <li class="nav-bar-items"><button onclick="scrollToPlayers()" class="nav-buttons"><p class="nav-bar-items" id="players-actual-id">Servers</p></button></li>
             </ul>
         <section class="container">
             <h1 class="main-2">Dave's KZ</h1>
@@ -25,9 +24,16 @@
             
             
         </section>
-        <div class="container-about">
-            <div class="main-about">             <h2 class="vip-h3">VIP</h2>
+        <div class="container-about" id="scrolling-to-1">
+            <div class="main-about" onmouseover="changeBgVip('rgba(0, 0, 0, 0.6)')" onmouseout="changeBgVip('rgba(0, 0, 0, 0.45)')">             <h2 class="vip-h3">VIP</h2>
                 Access to our KZ Climb servers is avalible through our private Steam Group. Permanent access can be purchased for 5€ through paypal. Donations goes towards keeping the servers up and running. Website still in development.</div>
+            </div>
+        <div class="container-about" id="players-container">
+            <div class="main-about" id="servers-info" onmouseover="changeBg('rgba(255, 255, 255, 0.15)')" onmouseout="changeBg('rgba(46, 43, 43, 0.45)')">
+                <h2 id="steam-group-members">Servers [Whitelist]</h2>
+                <p> GOKZ [Map running] - <a href="steam://connect/78.82.44.35:10101">78.82.44.35:10101</a></p>
+                <p> KZTimer [Jumpstating] - <a href="steam://connect/78.82.44.35:10100">78.82.44.35:10100</a></p>
+            </div>
         </div>
         <footer>
             <div class="div-icon">
@@ -38,5 +44,6 @@
             </div>
         </footer>
         <script src="main.js"></script>
+        <script src="includes/xml2json.js"></script>
     </body>
 </html>
