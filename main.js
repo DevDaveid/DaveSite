@@ -1,10 +1,20 @@
 var element = document.getElementById("scrolling-to-1");
 var element1 = document.getElementById("main-body");
 var element2 = document.getElementById("players-container");
+
 var homeId = document.getElementById("home-actual-id");
 var vipId = document.getElementById("vip-actual-id");
+
 var playersId = document.getElementById("players-actual-id");
 var prevScrollPos = window.pageYOffset;
+
+
+var i = 0;
+var backgrounds = [
+    './20210116115945_1.jpg',
+    './20210124214618_1.png',
+    './20210331004557_1.png'
+];
 
 function scrollTo1()
 {
@@ -54,7 +64,7 @@ window.onscroll = function()
     var currentScrollPos = window.pageYOffset;
     if(prevScrollPos > window.pageYOffset)
     {
-        document.getElementById("nav-bar").style.top = "0";
+        document.getElementById("nav-bar").style.top = "0px";
     } else 
     {
         document.getElementById("nav-bar").style.top = "-100px";
@@ -71,3 +81,14 @@ function changeBgVip(color)
 {
     document.getElementById("scrolling-to-1").style.backgroundColor = color;
 }
+
+setInterval(function() {
+    document.getElementById("main-1").style.backgroundImage = 'url(' + backgrounds[i]+ ')';
+    i++;
+
+    if(i == backgrounds.length)
+    {
+        i = 0;
+    }
+
+}, 5000);
